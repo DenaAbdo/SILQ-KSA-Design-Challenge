@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FINA Pay Account — نموذج تقديم تجريبي</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1F6F5;--card:#fff;--ink:#10201F;--mute:#56706C;--line:#DCE6E3;--pri:#0F5F5A;--pri-ink:#fff;--soft:#E1F0ED;--ok:#146C43;--ok-bg:#E5F4EC;--warn-bg:#FFF3D6;--warn:#7A5200;--err:#B3261E;--r:16px;--f:'IBM Plex Sans Arabic','Segoe UI',Tahoma,system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1514;--card:#141F1E;--ink:#E8F1EF;--mute:#9BB3AE;--line:#2A3A38;--pri:#4CC2B4;--pri-ink:#04211F;--soft:#17302D;--ok:#6FD3A0;--ok-bg:#12291F;--warn-bg:#33290F;--warn:#F2CE7A;--err:#FF8A80}}
+:root[data-theme="dark"]{--bg:#0C1514;--card:#141F1E;--ink:#E8F1EF;--mute:#9BB3AE;--line:#2A3A38;--pri:#4CC2B4;--pri-ink:#04211F;--soft:#17302D;--ok:#6FD3A0;--ok-bg:#12291F;--warn-bg:#33290F;--warn:#F2CE7A;--err:#FF8A80}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--f)}
+#app{max-width:440px;margin:0 auto;min-height:100vh}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:14px 20px 10px;z-index:5}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:36px}
+.logo{font-weight:600;font-size:18px;letter-spacing:.5px}
+.demo{font-size:11px;background:var(--warn-bg);color:var(--warn);padding:2px 10px;border-radius:99px}
+.bar{display:flex;gap:4px;margin-top:10px}.bar i{flex:1;height:4px;border-radius:2px;background:var(--line)}.bar i.on{background:var(--pri)}
+main{padding:8px 20px 40px}
+h1{font-size:24px;line-height:1.4;font-weight:600;margin:12px 0 6px}
+h2{font-size:15px;font-weight:600;margin:22px 0 8px}
+p{margin:0 0 12px}.mute{color:var(--mute);font-size:14px}.sm{font-size:12px;color:var(--mute)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin:12px 0}
+.ok{background:var(--ok-bg);border-color:transparent;color:var(--ok)}.ok p,.ok b{color:var(--ink)}
+.warn{background:var(--warn-bg);border-color:transparent;color:var(--warn);font-size:14px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:50px;border:0;border-radius:14px;background:var(--pri);color:var(--pri-ink);font:600 16px var(--f);cursor:pointer;margin-top:14px}
+.btn.g{background:transparent;color:var(--pri);border:1.5px solid var(--line)}
+.btn.t{background:none;color:var(--mute);font-weight:400;min-height:40px;font-size:14px}
+.btn:focus-visible,.chip:focus-visible,input:focus-visible,.icon:focus-visible{outline:3px solid var(--pri);outline-offset:2px}
+.btn:disabled{opacity:.6}
+.icon{background:none;border:0;color:var(--ink);padding:6px;cursor:pointer;display:flex;align-items:center;gap:4px;font:400 13px var(--f)}
+svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+label.l{display:block;font-size:13px;color:var(--mute);margin:14px 0 6px}
+input[type=text],input[type=email],input[type=tel]{width:100%;min-height:50px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);padding:0 14px;font:400 17px var(--f)}
+input.ltr{direction:ltr;text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:0 16px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:400 14px var(--f);cursor:pointer}
+.chip.on{background:var(--soft);border-color:var(--pri);color:var(--pri);font-weight:600}
+.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}.row:last-child{border:0}.row span:first-child{color:var(--mute)}
+.li{display:flex;gap:12px;align-items:flex-start;margin:12px 0}.li .dot{width:36px;height:36px;border-radius:50%;background:var(--soft);color:var(--pri);display:flex;align-items:center;justify-content:center;flex:none}
+.li b{display:block;font-size:14px}.li span.m{font-size:13px;color:var(--mute);line-height:1.6}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1.5px solid var(--line);border-radius:14px;margin:8px 0;cursor:pointer;background:var(--card)}
+.chk input{width:22px;height:22px;margin-top:2px;accent-color:var(--pri);flex:none}.chk b{font-weight:500;font-size:14px;display:block}.chk span{font-size:12px;color:var(--mute);line-height:1.6}
+.err{color:var(--err);font-size:13px;margin:6px 0 0;min-height:0}
+.sk{height:14px;border-radius:7px;background:var(--line);margin:10px 0;animation:p 1.2s infinite}@keyframes p{50%{opacity:.4}}
+.spin{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--pri);border-radius:50%;animation:s .9s linear infinite;margin:0 auto}@keyframes s{to{transform:rotate(360deg)}}
+.big{font-size:44px;font-weight:600;letter-spacing:4px;text-align:center;color:var(--pri);margin:8px 0}
+.sheet{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:flex-end;justify-content:center;z-index:20}
+.sheet>div{background:var(--card);width:100%;max-width:440px;border-radius:24px 24px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px))}
+.toast{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;font-size:14px;z-index:30}
+.tl{border-inline-start:2px solid var(--line);margin:16px 12px 0 0;padding-inline-start:20px}.tl div{position:relative;margin-bottom:18px}.tl div:before{content:"";position:absolute;inset-inline-start:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--line)}.tl .d:before{background:var(--pri)}.tl b{display:block;font-size:14px}.tl span{font-size:13px;color:var(--mute)}
+.stamp{width:72px;height:72px;border-radius:50%;background:var(--ok-bg);color:var(--ok);display:flex;align-items:center;justify-content:center;margin:16px auto 8px;animation:pop .5s cubic-bezier(.2,1.4,.4,1)}.stamp svg{width:36px;height:36px;stroke-width:2.4}@keyframes pop{from{transform:scale(.4);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const I={check:'M20 6 9 17l-5-5',arr:'M5 12h14M12 5l7 7-7 7',lock:'M5 11h14v10H5zM8 11V7a4 4 0 018 0v4',eye:'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 100 6 3 3 0 000-6z',up:'M12 16V4M7 9l5-5 5 5M4 20h16',store:'M4 9l1-5h14l1 5M4 9v11h16V9M10 20v-6h4v6M4 9a3 3 0 006 0 3 3 0 006 0 3 3 0 004 0',id:'M3 6h18v12H3zM14 10h4M14 14h4M8 11.5a1.5 1.5 0 100-.01',bank:'M3 10l9-6 9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18',clock:'M12 7v5l3 2M12 3a9 9 0 100 18 9 9 0 000-18z',save:'M5 4h12l2 2v14H5zM8 4v5h7V4M8 20v-6h8v6',refresh:'M20 11a8 8 0 00-14-4M4 4v4h4M4 13a8 8 0 0014 4M20 20v-4h-4',file:'M6 3h8l4 4v14H6zM14 3v4h4'};
+const ic=n=>`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${I[n]}"/></svg>`;
+const S={step:0,cr:'',ok:false,vat:null,vatno:'',role:'owner',deleg:false,nf:0,email:'',bank:null,bname:'',rev:'',debt:null,limit:'',purpose:[],c:[0,0,0]};
+const $=s=>document.querySelector(s),N=v=>(+String(v).replace(/\D/g,'')||0).toLocaleString('en-US');
+const BIZ={name:'مكتبة الرواد',form:'مؤسسة فردية',act:'بيع القرطاسية بالتجزئة',st:'سارٍ',addr:'الرياض، حي العليا'};
+function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.append(e);setTimeout(()=>e.remove(),2200)}
+function go(n){S.step=n;render();scrollTo(0,0)}
+function head(){const s=S.step;if(s==0||s==6)return`<header><div class="top"><span class="logo">FINA</span><span class="demo">نموذج تجريبي، بيانات وهمية</span></div></header>`;
+return`<header><div class="top"><button class="icon" onclick="go(${s-1})" aria-label="رجوع">${ic('arr')}رجوع</button><span class="sm">الخطوة ${s} من 5</span><button class="icon" onclick="toast('حفظنا طلبك، ارجع في أي وقت')">${ic('save')}حفظ</button></div><div class="bar">${[1,2,3,4,5].map(i=>`<i class="${i<=s?'on':''}"></i>`).join('')}</div></header>`}
+function render(){$('#app').innerHTML=head()+'<main>'+V[S.step]()+'</main>';A[S.step]&&A[S.step]()}
+const li=(i,b,m)=>`<div class="li"><div class="dot">${ic(i)}</div><div><b>${b}</b><span class="m">${m}</span></div></div>`;
+const chips=(arr,sel,fn)=>arr.map((t,i)=>`<button class="chip ${sel(i,t)?'on':''}" onclick="${fn}(${i})" aria-pressed="${!!sel(i,t)}">${t}</button>`).join('');
+const V=[
+()=>`<div><p class="sm" style="margin-top:8px">وصلك هذا الرابط من <b>مؤسسة النخبة للتوريدات</b></p>
+<h1>حد شراء متجدد لمنشأتك</h1><p class="mute">قدّم مرة واحدة، واشترِ من موردينك بدون إعادة التقديم لكل فاتورة.</p>
+<div class="card"><div class="row"><span>الرسم الشهري</span><span>ثابت، تراه كاملاً قبل الإرسال</span></div><div class="row"><span>بعد كل سداد</span><span>يعود المتاح من الحد</span></div></div>
+<h2>ثلاثة أشياء فقط ستحتاجها</h2>
+${li('store','رقم السجل التجاري','نجلب بيانات منشأتك لتراجعها، ولا تكتبها')}${li('id','هويتك عبر نفاذ','بدون رفع صورة هوية')}${li('bank','حسابك البنكي','اربطه بإذن للقراءة، أو ارفع كشف حساب')}
+<p class="sm" style="display:flex;gap:6px;align-items:center">${ic('clock')} حوالي 5 دقائق، ويمكنك الحفظ والمتابعة لاحقاً</p>
+<button class="btn" onclick="go(1)">ابدأ الطلب</button><button class="btn t" onclick="toast('سيتواصل معك فريق FINA')">تحدث مع فريقنا</button>
+<p class="sm" style="text-align:center">تقديم الطلب لا يعني الموافقة عليه. يقدّمه لك FINA.</p></div>`,
+()=>`<h1>ابدأ برقم السجل التجاري</h1><p class="mute">سنجلب بيانات منشأتك لتراجعها، ولا تحتاج لكتابتها.</p>
+<label class="l" for="cr">رقم السجل التجاري (10 أرقام)</label><input id="cr" class="ltr" type="tel" inputmode="numeric" maxlength="10" placeholder="1010123456" value="${S.cr}" oninput="S.cr=this.value.replace(/\\D/g,'');this.value=S.cr;if(S.cr.length==10)look();else{S.ok=false;$('#res').innerHTML=''}">
+<div id="res"></div><p class="sm" style="margin-top:14px">للتجربة: رقم يبدأ بـ 9 يعني أننا لم نجد المنشأة.</p>`,
+()=>`<h1>تأكيد هويتك</h1><p class="mute">نستخدم نفاذ لنتأكد أنك أنت، ولا نطلب منك رفع الهوية.</p><div id="nf"></div>`,
+()=>`<h1>اربط حسابك البنكي</h1><p class="mute">نراجع حركة حسابك لنقدّر حداً يناسب منشأتك، بدل أن تجمع الكشوف بنفسك.</p><div id="bk"></div>
+<label class="l" for="rev">الإيرادات السنوية التقديرية (ر.س)</label><input id="rev" class="ltr" type="tel" inputmode="numeric" placeholder="1,200,000" value="${S.rev}" oninput="S.rev=N(this.value);this.value=S.rev"><p class="sm">رقم تقريبي يكفي.</p>
+<h2>هل عليك تمويل قائم حالياً؟</h2><div class="chips" id="debt"></div><p class="err" id="e3"></p><button class="btn" onclick="v3()">متابعة</button>`,
+()=>`<h1>كم تحتاج؟</h1><p class="mute">هذا طلبك فقط. الحد النهائي يحدده التقييم، والطلب لا يضمن الموافقة.</p>
+<label class="l" for="lim">الحد المطلوب (ر.س)</label><input id="lim" class="ltr" type="tel" inputmode="numeric" placeholder="250,000" value="${S.limit}" oninput="S.limit=N(this.value);this.value=S.limit;$('#lim-c').innerHTML=lc()">
+<div class="chips" id="lim-c" style="margin-top:10px"></div>
+<h2>ما الغرض؟ <span class="sm">اختياري</span></h2><div class="chips" id="pu"></div>
+<div class="card"><b style="font-size:14px">ما الذي تطلبه بالضبط</b><div class="row"><span>نوع الحد</span><span>متجدد، يعود مع كل سداد</span></div><div class="row"><span>الرسم</span><span>شهري ثابت</span></div><div class="row"><span>الاستخدام</span><span>الشراء من عدة موردين</span></div></div>
+<h2>موافقاتك</h2><div id="cs"></div><p class="err" id="e4"></p><button class="btn" onclick="v4()">متابعة للمراجعة</button>`,
+()=>'',()=>''];
+function rv(t,rows,n){return`<div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><b>${t}</b><button class="icon" style="color:var(--pri)" onclick="go(${n})">تعديل</button></div>${rows.map(r=>`<div class="row"><span>${r[0]}</span><span>${r[1]}</span></div>`).join('')}</div>`}
+const lc=()=>['100,000','250,000','500,000'].map(v=>`<button class="chip ${S.limit==v?'on':''}" onclick="S.limit='${v}';$('#lim').value='${v}';$('#lim-c').innerHTML=lc()">${v}</button>`).join('');
+function vatUI(){return`<h2>هل منشأتك مسجلة في ضريبة القيمة المضافة؟</h2><div class="chips">${chips(['نعم','لا'],(i)=>S.vat===(i==0),'sv')}</div><div id="vat">${vf()}</div><p class="sm">إن كنت مسجلاً سنطلب الرقم فقط. لا حاجة لرفع شهادة الآن.</p><p class="err" id="e1"></p><button class="btn" onclick="v1()">متابعة</button>`}
+const vf=()=>S.vat?`<label class="l" for="vn">رقم التسجيل الضريبي (15 رقماً)</label><input id="vn" class="ltr" type="tel" inputmode="numeric" maxlength="15" placeholder="300000000000003" value="${S.vatno}" oninput="S.vatno=this.value.replace(/\\D/g,'');this.value=S.vatno">`:'';
+function sv(i){S.vat=i==0;$('#conf').innerHTML=vatUI()}
+function v1(){if(S.vat===null)return $('#e1').textContent='اختر نعم أو لا للمتابعة.';if(S.vat&&S.vatno.length!=15)return $('#e1').textContent='الرقم الضريبي 15 رقماً، راجعه وحاول مرة أخرى.';go(2)}
+const A=[];
+A[1]=()=>{if(S.manual)bizCard();else if(S.cr.length==10)S.cr[0]=='9'?nofound():bizCard()};
+A[2]=()=>nfUI();
+function sr(i){S.role=i?'dg':'owner';nfUI()}
+function v2(){if(S.role=='dg'&&!S.deleg)return $('#e2').textContent='ارفع التفويض للمتابعة.';if(!/^\S+@\S+\.\S+$/.test(S.email))return $('#e2').textContent='اكتب بريداً صحيحاً، مثل name@company.com';go(3)}
+A[3]=()=>{bkUI();dbUI()};
+function dbUI(){$('#debt').innerHTML=chips(['نعم','لا'],i=>S.debt===(i==0),'sd')}
+function sd(i){S.debt=i==0;dbUI()}
+A[4]=()=>{$('#lim-c').innerHTML=lc();pu();cs()};
+function pu(){$('#pu').innerHTML=chips(['شراء مخزون','تغطية فجوة السيولة','توسّع','غير ذلك'],(i,t)=>S.purpose.includes(t),'tp')}
+function tp(i){const t=['شراء مخزون','تغطية فجوة السيولة','توسّع','غير ذلك'][i],k=S.purpose.indexOf(t);k<0?S.purpose.push(t):S.purpose.splice(k,1);pu()}
+function cs(){const T=[['مراجعة تقريري الائتماني','من شركة المعلومات الائتمانية، لتقييم الطلب فقط.'],['استخدام بيانات حسابي البنكي','لتقدير الحد المناسب، بإذن للقراءة فقط.'],['الموافقة على شروط Pay Account','حد متجدد برسم شهري ثابت. اقرأ الشروط كاملة.']];$('#cs').innerHTML=T.map((t,i)=>`<label class="chk"><input type="checkbox" ${S.c[i]?'checked':''} onchange="S.c[${i}]=this.checked?1:0"><div><b>${t[0]}</b><span>${t[1]}</span></div></label>`).join('')}
+function v4(){const e=$('#e4');if(!S.limit)return e.textContent='اكتب الحد المطلوب.';if(S.c.includes(0))return e.textContent='نحتاج موافقتك على الثلاثة للمتابعة.';go(5)}
+function send(){const b=$('#send');b.disabled=true;b.innerHTML='<div class="spin" style="width:22px;height:22px;border-width:2.5px;margin:0"></div> نرسل طلبك...';setTimeout(()=>go(6),1400)}
+const biz=()=>S.manual?S.m:BIZ;
+function look(){$('#res').innerHTML='<div class="card"><div class="sk" style="width:60%"></div><div class="sk"></div><div class="sk" style="width:80%"></div><p class="sm">نبحث عن منشأتك...</p></div>';setTimeout(()=>{if(S.cr.length==10)S.cr[0]=='9'?nofound():bizCard()},1100)}
+function nofound(){$('#res').innerHTML=`<div class="card warn"><b>ما لقينا منشأة بهذا الرقم</b><p style="margin:6px 0 0">راجع الرقم، أو أدخل بيانات منشأتك بنفسك وسنراجعها نحن. لا تحتاج للخروج من الطلب.</p></div><button class="btn g" onclick="$('#cr').focus()">راجع الرقم</button><button class="btn" onclick="manual()">أدخل بيانات منشأتي</button>`}
+function bizCard(){const b=biz();$('#res').innerHTML=`<div class="card ${S.manual?'':'ok'}"><p style="display:flex;gap:6px;align-items:center;margin:0 0 8px;color:${S.manual?'var(--warn)':'var(--ok)'}">${ic('check')}<b>${S.manual?'بيانات أدخلتها أنت، سنراجعها':'وجدنا منشأتك'}</b></p>${[['الاسم',b.name],['الشكل القانوني',b.form],['النشاط',b.act],['الحالة',b.st||'نتحقق منها'],['العنوان',b.addr]].map(r=>`<div class="row"><span style="color:var(--mute)">${r[0]}</span><b style="font-weight:500">${r[1]}</b></div>`).join('')}</div>
+<div id="conf">${S.ok?vatUI():`<button class="btn" onclick="S.ok=true;$('#conf').innerHTML=vatUI()">نعم، هذه منشأتي</button><button class="btn g" onclick="wrong()">في خطأ</button>`}</div>`}
+function wrong(){$('#conf').innerHTML=`<div class="card warn"><b>ما الذي لا يطابق؟</b><p style="margin:8px 0">لا تحتاج لتحديث السجل الآن. أدخل بيانات منشأتك بنفسك وكمّل، وسنراجعها نحن.</p><button class="btn" style="margin-top:6px" onclick="manual()">أدخل بياناتي يدوياً</button><button class="btn g" onclick="toast('سيتصل بك فريق FINA')">تحدث مع فريقنا</button></div>`}
+function manual(){S.m=S.m||{name:'',form:'مؤسسة فردية',act:'',addr:''};S.manual=false;S.ok=false;$('#res').innerHTML=`<h2>بيانات منشأتك</h2><label class="l" for="mn">اسم المنشأة</label><input id="mn" type="text" value="${S.m.name}" oninput="S.m.name=this.value"><label class="l">الشكل القانوني</label><div class="chips" id="mf"></div><label class="l" for="ma">النشاط التجاري</label><input id="ma" type="text" placeholder="مثال: بيع القرطاسية بالتجزئة" value="${S.m.act}" oninput="S.m.act=this.value"><label class="l" for="md">المدينة والحي</label><input id="md" type="text" placeholder="الرياض، حي العليا" value="${S.m.addr}" oninput="S.m.addr=this.value">
+<div class="card" style="font-size:13px;color:var(--mute)">سنراجع هذه البيانات يدوياً، وقد تحتاج المراجعة وقتاً أطول قليلاً. باقي الخطوات لا تتغير.</div><button class="btn g" onclick="toast('اخترنا ملفاً تجريبياً')">${ic('up')} ارفع صورة السجل التجاري (اختياري)</button><p class="err" id="e5"></p><button class="btn" onclick="vm()">حفظ ومتابعة</button>`;mf()}
+const MF=['مؤسسة فردية','شركة'];function mf(){$('#mf').innerHTML=chips(MF,(i,t)=>S.m.form==t,'smf')}function smf(i){S.m.form=MF[i];mf()}
+function vm(){const m=S.m;if(!m.name.trim()||!m.act.trim()||!m.addr.trim())return $('#e5').textContent='أكمل الاسم والنشاط والعنوان للمتابعة.';S.manual=true;S.ok=true;bizCard()}
+function nfUI(){const e=$('#nf');
+if(S.nf==0)e.innerHTML=`<label class="l" for="nid">رقم الهوية الوطنية أو الإقامة</label><input id="nid" class="ltr" type="tel" inputmode="numeric" maxlength="10" placeholder="1XXXXXXXXX" value="${S.nid||''}" oninput="S.nid=this.value.replace(/\\D/g,'');this.value=S.nid"><p class="sm">نستخدمه فقط لإرسال طلب التحقق إلى نفاذ. سيصلك إشعار على تطبيق نفاذ في جوالك.</p><p class="err" id="e0"></p><button class="btn" onclick="nfStart()">${ic('id')} تحقق عبر نفاذ</button>`;
+else if(S.nf==1)e.innerHTML=`<div class="card" style="text-align:center"><div class="spin"></div><p style="margin:14px 0 4px">أرسلنا طلباً إلى تطبيق نفاذ على جوالك</p><p class="sm">افتح التطبيق واختر هذا الرقم</p><div class="big">47</div><p class="sm">ننتظر تأكيدك...</p></div><button class="btn t" onclick="nfCancel()">إلغاء وتغيير الرقم</button>`;
+else e.innerHTML=`<div class="card ok"><p style="display:flex;gap:6px;align-items:center;margin:0 0 4px;color:var(--ok)">${ic('check')}<b style="color:var(--ok)">تم التحقق عبر نفاذ</b></p><p style="margin:0">خالد عبدالله السالم</p><p class="sm" style="margin:2px 0 0">هوية تنتهي بـ ${S.nid.slice(-4)}</p></div><button class="btn t" style="margin-top:0" onclick="nfReset()">ليست هويتي، غيّر</button>
+<h2>ما صفتك في المنشأة؟</h2><div class="chips">${chips(['مالك المنشأة','أقدّم نيابة عنها'],i=>S.role==(i?'dg':'owner'),'sr')}</div>
+${S.role=='owner'?`<div class="card" style="display:flex;gap:10px;align-items:center">${ic('check')}<span class="mute" style="font-size:13px">أنت مالك المنشأة المسجّل في السجل. لا نحتاج إثبات صلاحية.</span></div>`:`<div class="card warn"><b>نحتاج تفويضاً من المالك</b><p style="margin:6px 0 10px">هوية المالك المسجّل مختلفة عن هويتك. ارفع تفويضاً رسمياً أو اطلب من المالك إكمال الطلب.</p><button class="btn g" style="margin:0" onclick="S.deleg=!S.deleg;nfUI()">${ic(S.deleg?'check':'up')} ${S.deleg?'تم رفع التفويض (اضغط للإزالة)':'ارفع التفويض'}</button></div>`}
+<label class="l" for="em">البريد الإلكتروني</label><input id="em" class="ltr" type="email" placeholder="name@company.com" value="${S.email}" oninput="S.email=this.value"><p class="sm">نرسل عليه تحديثات الطلب فقط.</p><p class="err" id="e2"></p><button class="btn" onclick="v2()">متابعة</button>`}
+function nfStart(){if(!/^[12]\d{9}$/.test(S.nid||''))return $('#e0').textContent='رقم الهوية 10 أرقام ويبدأ بـ 1 أو 2.';S.nf=1;nfUI();clearTimeout(S.nfT);S.nfT=setTimeout(()=>{S.nf=2;if($('#nf'))nfUI()},2600)}
+function nfCancel(){clearTimeout(S.nfT);S.nf=0;nfUI()}
+function nfReset(){S.nf=0;S.nid='';S.role='owner';S.deleg=false;nfUI()}
+function bkUI(){const e=$('#bk'),b=S.bname;
+if(S.bank=='ok')e.innerHTML=`<div class="card ok"><p style="display:flex;gap:6px;align-items:center;margin:0 0 6px;color:var(--ok)">${ic('check')}<b style="color:var(--ok)">تم ربط ${b}</b></p><div class="row"><span style="color:var(--mute)">الحساب</span><b style="font-weight:500">${S.acct}</b></div><div class="row"><span style="color:var(--mute)">ما شاركناه</span><b style="font-weight:500">حركة آخر 12 شهراً</b></div><div class="row"><span style="color:var(--mute)">الإذن</span><b style="font-weight:500">قراءة فقط، لمرة واحدة</b></div></div><button class="btn g" onclick="revoke()">إلغاء الربط</button>`;
+else if(S.bank=='consent')e.innerHTML=`<div class="card"><b>ستنتقل إلى ${b}</b>${li('eye','ما سنطلبه','حركة الحساب لآخر 12 شهراً: التواريخ والمبالغ')}${li('lock','ما لا نستطيعه','تحويل أموال أو تنفيذ أي عملية')}${li('clock','مدة الإذن','لمرة واحدة، ويمكنك إلغاؤه في أي وقت')}</div><p class="sm">ستسجّل الدخول في ${b} نفسه، ولن نرى بيانات دخولك.</p><button class="btn" onclick="S.bank='page';S.acct='****4821';bkUI()">تابع إلى ${b}</button><button class="btn t" onclick="S.bank=null;bkUI()">إلغاء</button>`;
+else if(S.bank=='page')e.innerHTML=`<div class="card" style="border-style:dashed"><p class="sm" style="text-align:center">صفحة ${b} (محاكاة للنموذج)</p><b>FINA تطلب إذناً بالقراءة فقط</b><p class="mute" style="margin:4px 0 8px">اختر الحساب الذي تريد مشاركته</p>${[['****4821','الحساب الجاري، مكتبة الرواد'],['****7733','حساب التوفير']].map((a,i)=>`<label class="chk"><input type="radio" name="ac" ${i==0?'checked':''} onchange="S.acct='${a[0]}'"><div><b>${a[1]}</b><span style="direction:ltr;display:block;text-align:right">${a[0]}</span></div></label>`).join('')}</div><button class="btn" onclick="allow()">السماح</button><button class="btn g" onclick="S.bank=null;bkUI();toast('لم نصل لحسابك')">رفض</button>`;
+else if(S.bank=='upload'){if(S.up==1)e.innerHTML=`<div class="card" style="text-align:center"><div class="spin"></div><p style="margin:14px 0 0">نرفع الملف ونفحصه...</p></div>`;
+else if(S.up==2)e.innerHTML=`<div class="card ok"><p style="display:flex;gap:6px;align-items:center;margin:0 0 6px;color:var(--ok)">${ic('file')}<b style="color:var(--ok)">${S.fname}</b></p>${['الصيغة PDF','المدة 12 شهراً','الاسم يطابق المنشأة'].map(t=>`<div class="row"><span style="color:var(--ink)">${t}</span><span style="color:var(--ok)">${ic('check')}</span></div>`).join('')}</div><button class="btn g" onclick="S.up=0;S.fname='';bkUI()">إزالة الملف</button>`;
+else e.innerHTML=`<div class="card"><b>كشف الحساب المطلوب</b><div class="row"><span>المدة</span><span>آخر 12 شهراً</span></div><div class="row"><span>الصيغة</span><span>PDF من البنك مباشرة</span></div><div class="row"><span>الاسم</span><span>يطابق اسم المنشأة</span></div><div class="row"><span>الحجم</span><span>حتى 10 ميغابايت</span></div></div><h2>كيف أحصل عليه؟</h2><p class="mute">1. افتح تطبيق بنكك واختر كشف الحساب.<br>2. حدد آخر 12 شهراً ثم PDF.<br>3. احفظه وارجع هنا.</p><label class="btn" style="cursor:pointer">${ic('up')} اختر الملف<input type="file" accept=".pdf" hidden onchange="upl(this.files[0]&&this.files[0].name)"></label><button class="btn g" onclick="upl('statement-12m.pdf')">استخدم ملفاً تجريبياً</button><button class="btn t" onclick="S.bank=null;S.up=0;bkUI()">اربط حسابي بدلاً من ذلك</button>`}
+else e.innerHTML=`<div class="card">${li('eye','ما سنراه','حركة الحساب لآخر 12 شهراً: التواريخ والمبالغ')}${li('lock','ما لا نستطيعه','تحويل أموال أو تنفيذ أي عملية. الإذن للقراءة فقط')}${li('clock','مدة الإذن','لمرة واحدة، ويمكنك إلغاؤه في أي وقت')}</div>
+${S.bank=='fail'?`<div class="card warn"><b>تعذّر الربط مع هذا البنك</b><p style="margin:6px 0 0">لم نحفظ أي شيء. جرّب بنكاً آخر أو ارفع كشف حساب بدلاً من ذلك.</p></div>`:''}
+<button class="btn" onclick="sheet()">${ic('bank')} اربط حسابي البنكي</button><button class="btn g" onclick="S.bank='upload';S.up=0;bkUI()">${ic('up')} ارفع كشف حساب بدلاً من ذلك</button>`}
+function upl(n){S.fname=n||'statement.pdf';S.up=1;bkUI();setTimeout(()=>{S.up=2;bkUI()},1400)}
+function allow(){$('#bk').innerHTML='<div class="card" style="text-align:center"><div class="spin"></div><p style="margin:14px 0 0">نكمل الربط...</p></div>';setTimeout(()=>{S.bank='ok';bkUI()},1200)}
+function sheet(){const d=document.createElement('div');d.className='sheet';d.innerHTML=`<div role="dialog" aria-label="اختر بنكك"><b>اختر بنكك</b><p class="sm">ستنتقل لصفحة البنك لتأكيد الإذن.</p>${['الراجحي','الأهلي','الإنماء','بنك آخر'].map(b=>`<button class="btn g" data-b="${b}">${b}</button>`).join('')}</div>`;document.body.append(d);d.onclick=e=>{const b=e.target.dataset.b;if(e.target==d)return d.remove();if(!b)return;S.bname=b;if(b=='بنك آخر'){d.querySelector('div').innerHTML='<div class="spin"></div><p style="text-align:center;margin-top:14px">نتحقق من البنك...</p>';setTimeout(()=>{d.remove();S.bank='fail';bkUI()},1200)}else{d.remove();S.bank='consent';bkUI()}}}
+function revoke(){const d=document.createElement('div');d.className='sheet';d.innerHTML=`<div role="dialog"><b>إلغاء ربط ${S.bname}؟</b><p class="mute" style="margin-top:6px">سنوقف الإذن ولن نصل لحسابك. طلبك يبقى محفوظاً وتقدر تربط حساباً آخر أو ترفع كشف حساب.</p><button class="btn" id="y">نعم، ألغِ الربط</button><button class="btn g" id="n">رجوع</button></div>`;document.body.append(d);d.querySelector('#n').onclick=()=>d.remove();d.querySelector('#y').onclick=()=>{d.remove();S.bank=null;S.bname='';bkUI();toast('ألغينا الإذن، ولا نصل لحسابك')}}
+function v3(){const e=$('#e3');if(!(S.bank=='ok'||(S.bank=='upload'&&S.up==2)))return e.textContent='اربط حسابك أو ارفع كشف حساب للمتابعة.';if(!S.rev)return e.textContent='اكتب إيراداتك التقريبية.';if(S.debt===null)return e.textContent='اختر نعم أو لا عن التمويل القائم.';go(4)}
+V[5]=()=>{const b=biz();return`<h1>راجع طلبك</h1><p class="mute">تأكد من كل شيء قبل الإرسال. يمكنك تعديل أي قسم.</p>
+${rv('المنشأة',[['الاسم',b.name],['السجل التجاري',S.manual?'أدخلت البيانات يدوياً':S.cr],['النشاط',b.act],['ضريبة القيمة المضافة',S.vat?(S.vatno||'مسجّل'):'غير مسجّل']],1)}
+${rv('المتقدّم',[['الاسم','خالد عبدالله السالم'],['الصفة',S.role=='owner'?'مالك المنشأة':'مفوّض عن المنشأة'],['البريد',S.email]],2)}
+${rv('الصورة المالية',[['المصدر',S.bank=='upload'?'كشف حساب مرفوع':S.bname+' '+S.acct+' (مربوط)'],['الإيرادات السنوية',N(S.rev)+' ر.س'],['تمويل قائم',S.debt?'نعم':'لا']],3)}
+${rv('الطلب',[['الحد المطلوب',N(S.limit)+' ر.س'],['الغرض',S.purpose.join('، ')||'لم يُحدد'],['الموافقات','3 من 3']],4)}
+<button class="btn" id="send" onclick="send()">أرسل الطلب</button><p class="sm" style="text-align:center;margin-top:10px">الإرسال لا يعني الموافقة. سنراجع طلبك ونخبرك بالنتيجة.</p>`};
+V[6]=()=>`<div class="stamp">${ic('check')}</div><h1 style="text-align:center">وصلنا طلبك</h1><p class="mute" style="text-align:center">رقم الطلب <b style="color:var(--ink)">FP-48213</b></p>
+<div class="card ok"><b style="font-size:17px">نرد عليك خلال 7 أيام عمل</b><p style="margin:6px 0 0;font-size:14px">على ${S.email||'بريدك'} وعلى جوالك. المدة تجريبية، وتتأكد مع FINA.</p></div>
+<div class="card"><div class="tl"><div class="d"><b>أرسلت طلبك</b><span>الآن</span></div><div><b>نراجع بياناتك</b><span>${S.manual?'نبدأ بمراجعة بيانات منشأتك التي أدخلتها':'نراجع الحساب والتقرير الائتماني'}</span></div><div><b>إذا احتجنا شيئاً</b><span>نتواصل معك، ويبقى طلبك محفوظاً ولا تبدأ من جديد</span></div><div><b>القرار</b><span>نخبرك بالنتيجة وخطوات التفعيل</span></div></div></div>
+<div class="card"><b style="font-size:14px">بياناتك وأذوناتك</b><div class="row"><span>${S.bank=='upload'?'كشف الحساب':'ربط '+S.bname}</span>${S.revoked?'<span style="color:var(--err)">أُلغي</span>':'<button class="icon" style="color:var(--pri)" onclick="S.revoked=1;toast(\'ألغينا الإذن\');render()">'+(S.bank=='upload'?'احذف الملف':'ألغِ الإذن')+'</button>'}</div>${S.revoked?'<p class="sm" style="margin:8px 0 0">قد نطلب منك كشف حساب لإكمال المراجعة.</p>':'<p class="sm" style="margin:8px 0 0">يمكنك إلغاؤه في أي وقت. قد يؤخر ذلك المراجعة.</p>'}</div>
+<button class="btn g" onclick="location.reload()">أعد التجربة من البداية</button>`;
+render();
+</script>
+</body>
+</html>
